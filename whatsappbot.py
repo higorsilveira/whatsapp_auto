@@ -25,10 +25,9 @@ def main():
     time.sleep(3)
     global game_is_running
     while game_is_running:
-        #print('entrou no loop')
         texto = ler_mensagem()
-        #print('digitado', texto)
         if texto[:3] == '/d':
+            print('reconheceu o comando')
             enviar_mensagem(mensagem)
         else:
             print('nao reconheceu comando')
@@ -46,8 +45,16 @@ def buscar_contato(contato):
 
 def enviar_mensagem(mensagem):
     
-    mensagem
+    pos = str(mensagem).upper().find('D')
+    pos_branco = str(mensagem[3:]).upper.find(' ')
+    vezes = int(mensagem[3:pos])
+    dado = int(mensagem[pos:pos_branco])
+    plus = int(mensagem[pos_branco:])
+    print('vezes = ',vezes)
+    print('dado = ',dado)
+    print('plus = ',plus)
     
+    driver.quit()
 
     campo_mensagem = driver.find_elements_by_xpath('//div[contains(@class,"copyable-text selectable-text")]')
     campo_mensagem[1].click()
